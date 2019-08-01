@@ -1,0 +1,25 @@
+{
+  "name": "users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugenekhristo/the-complete-guide-to-mongodb-stephen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugenekhristo/the-complete-guide-to-mongodb-stephen/issues"
+  },
+  "homepage": "https://github.com/eugenekhristo/the-complete-guide-to-mongodb-stephen#readme",
+  "dependencies": {
+    "mocha": "^6.2.0",
+    "mongoose": "^5.6.7",
+    "nodemon": "^1.19.1"
+  }
+}
