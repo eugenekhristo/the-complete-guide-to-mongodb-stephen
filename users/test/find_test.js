@@ -9,8 +9,13 @@ describe('Finding users', () => {
     await serj.save();
   });
 
-  it('should find all users with a name of Serj', async () => {
+  it('Should find all users with a name of Serj', async () => {
     const users = await User.find({ name: 'Serj' });
     assert(users.some(user => user.id === serj.id));
+  });
+
+  it('Should find a user by their id', async () => {
+    const user = await User.findOne({ _id: serj.id });
+    assert(user.name === 'Serj');
   });
 });
