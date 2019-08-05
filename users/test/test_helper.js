@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 before(async () => {
   try {
     await mongoose.connect('mongodb://localhost/users_test', {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useFindAndModify: false
     });
     console.log(`We are connected to MongoDB...`);
   } catch (error) {
