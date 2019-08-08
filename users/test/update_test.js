@@ -5,7 +5,7 @@ describe('Updating users', () => {
   let serj;
 
   beforeEach(async () => {
-    serj = new User({ name: 'Serj', postCount: 0 });
+    serj = new User({ name: 'Serj', likes: 0 });
     await serj.save();
   });
 
@@ -46,9 +46,9 @@ describe('Updating users', () => {
     assert(users[0].name === 'Daron');
   });
 
-  it('find user and increment their postCount by 1', async () => {
-    await User.findOneAndUpdate({ name: 'Serj' }, { $inc: { postCount: 1 } });
+  it('find user and increment their likes by 1', async () => {
+    await User.findOneAndUpdate({ name: 'Serj' }, { $inc: { likes: 1 } });
     const user = await User.findOne({ name: 'Serj' });
-    assert(user.postCount === 1);
+    assert(user.likes === 1);
   });
 });
