@@ -14,6 +14,4 @@ before(async () => {
 
 beforeEach(async () => {
   await mongoose.connection.collections.users.drop();
-  await mongoose.connection.collections.blogposts.drop();
-  await mongoose.connection.collections.comments.drop();
 });

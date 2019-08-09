@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const assert = require('assert');
 const User = require('../src/user');
 const BlogPost = require('../src/blogPost');
@@ -7,6 +8,9 @@ describe('Assotiations test', () => {
   let serj, blogPost, comment;
 
   beforeEach(async () => {
+    await mongoose.connection.collections.blogposts.drop();
+    await mongoose.connection.collections.comments.drop();
+
     serj = new User({ name: 'Serj' });
     blogPost = new BlogPost({
       title: 'Sky is over',
@@ -22,7 +26,7 @@ describe('Assotiations test', () => {
     await Promise.all([serj.save(), blogPost.save(), comment.save()]);
   });
 
-  it.only('Should get all nested graph of assotiations related to a user', async () => {
+  it('Should get all nested graph of assotiations related to a user', async () => {
     serj = await User.findOne({ name: 'Serj' }).populate({
       path: 'blogPosts',
       select: '-__v -user',
