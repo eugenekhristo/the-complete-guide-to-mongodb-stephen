@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/eugenekhristo/the-complete-guide-to-mongodb-stephen#readme",
   "dependencies": {
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mongoose": "^5.6.7",
     "nodemon": "^1.19.1"
   }
